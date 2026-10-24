@@ -65,7 +65,17 @@ Screen {
     padding: 1 0;
 }
 
+/* Настройки Header & Footer */
+Header {
+    background: #1e1e2e;
+    color: #a6adc8;
+    height: 1;                  
+}
 
+Header .header--title {
+    text-style: bold;
+    color: #7289da;             
+}
 
 Footer {
     background: #1e1e2e;     
@@ -82,21 +92,43 @@ Footer > .footer--highlight {
     background: #313244;       
 }
 
-
-
-Header {
-    background: #1e1e2e;
-    color: #a6adc8;
-    height: 1;                  
+/* Компоненты экрана конфигурации */
+.config-card {
+    width: 100%;
+    height: auto;
+    border: heavy #45475a;
+    background: transparent;
+    margin-bottom: 1;
+    padding: 1 3;
 }
 
-Header {
-    background: #1e1e2e;          
-    color: #a6adc8;              
+.config-card:hover {
+    background: #313244; 
+    border: heavy #7289da; 
 }
 
-
-Header .header--title {
+.config-card .section-title {
+    color: #cba6f7;
     text-style: bold;
-    color: #7289da;             
+    margin-bottom: 1;
+}
+
+.config-card #config-desc {
+    color: #a6adc8;
+    padding: 1 0;
+}
+
+#config-container {
+    width: 95%;
+    max-width: 120;
+    height: auto;
+    border: heavy #7289da;
+    padding: 2 4;
+    background: #1e1e2e; 
+}
+
+#btn-back {
+    margin-top: 2;
+    width: 40;
+    align: center middle;
 }

@@ -1,7 +1,23 @@
 from textual.app import App, ComposeResult
 from textual.containers import Container, Horizontal, Vertical
-from textual.widgets import Header, Footer, Static
+from textual.widgets import Header, Footer, Static, Button
+from textual.screen import Screen
 
+
+class ConfigScreen(Screen):
+    BINDINGS = [
+        ("escape", "app.pop_screen", "Back")
+    ]
+
+    def compose(self) -> ComposeResult:
+        yield Header()
+        with Container(id="config-container"):
+            yield Static("Settings", classes="section-title")
+            yield Static("Coming soon", id="config-text")
+
+            yield Button("Back", id="btn-back", variant="error")
+
+        yield Footer()
 
 class YMRPCApp(App):
     TITLE = "LinuxYMRpc"
@@ -9,7 +25,7 @@ class YMRPCApp(App):
 
     BINDINGS = [
         ("q", "quit", "Quit"),
-        ("c", "open_config", "Configuration"),
+        ("c", "open_config", "Config")
     ]
 
     CSS_PATH = "app.tcss"
@@ -34,7 +50,7 @@ class YMRPCApp(App):
                     )
 
                 # Section 3
-                with Container(classes="section"):
+                with Button(id="config-btn", classes="section config-card"):
                     yield Static("Configuration", classes="section-title")
                     yield Static(
                         "Manage service, startup and RPC display settings",
@@ -42,14 +58,18 @@ class YMRPCApp(App):
                     )
 
         
-
         yield Footer()
 
 
 
     def action_open_config(self) -> None:
-        # We'll implement the configuration screen next.
-        pass
+        self.push_screen(ConfigScreen())
+
+    def on_button_pressed(self, event: Button.Pressed) -> None:
+        if event.button.id == "config-btn":
+            self.action_open_config()
+        elif event.button.id == "btn-back":
+            self.app.pop_screen()
 
 
 if __name__ == "__main__":
