@@ -132,3 +132,93 @@ Footer > .footer--highlight {
     width: 40;
     align: center middle;
 }
+
+
+
+/* Setup / Authorization Screen */
+
+#setup-container {
+    width: 95%;
+    max-width: 100;
+    height: auto;
+    max-height: 90%;
+    border: heavy #7289da;
+    padding: 2 3;
+    background: #1e1e2e;
+}
+
+#setup-container .section-title {
+    color: #cba6f7;
+    text-style: bold;
+    margin-bottom: 2;
+}
+
+#setup-status {
+    color: #a6adc8;
+    padding: 1 0;
+    margin-bottom: 1;
+}
+
+#setup-link {
+    width: 100%;
+    color: #89b4fa;
+    text-style: underline;
+    padding: 1;
+    border: round #45475a;
+    margin-bottom: 1;
+}
+
+#setup-code {
+    width: 100%;
+    color: #a6e3a1;
+    background: #313244;
+    border: round #45475a;
+    padding: 1 2;
+    margin-top: 1;
+    margin-bottom: 2;
+    text-style: bold;
+}
+
+#setup-container Button {
+    width: 100%;
+    margin-top: 1;
+}
+
+#btn-auth {
+    background: #7289da;
+    color: #ffffff;
+    text-style: bold;
+    border: heavy #7289da;
+}
+
+#btn-auth:hover {
+    background: #8caaee;
+    border: heavy #b4befe;
+}
+
+#btn-auth:focus {
+    border: heavy #cba6f7;
+}
+
+#setup-container #btn-back {
+    background: #313244;
+    color: #cdd6f4;
+    border: heavy #45475a;
+}
+
+#setup-container #btn-back:hover {
+    background: #45475a;
+    border: heavy #7289da;
+}
+
+#setup-description {
+    color: #a6adc8;
+    margin-bottom: 1;
+}
+
+#setup-success {
+    color: #a6e3a1;
+    text-style: bold;
+    padding: 2 0;
+    text-align: center;
+}
